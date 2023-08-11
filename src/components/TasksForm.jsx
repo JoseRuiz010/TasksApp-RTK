@@ -27,9 +27,9 @@ export const TasksForm = () => {
   };
 
   return (
-    <div className="basis-1/2 shadow-2xl p-7 rounded-xl">
+    <div className="basis-1/2 h-min shadow-2xl p-7 rounded-xl">
       {isLoading && <h1>{"Creando Task...."}</h1>}
-      <h1 className=" font-bold text-2xl text-center my-6">Nueva Tarea</h1>
+      <h1 className=" font-bold text-2xl text-center mb-5">Nueva</h1>
       <form className="form" action="" onSubmit={hanldleSubmit}>
         <Input showCount maxLength={20} type="text" name="name" />
         <br />

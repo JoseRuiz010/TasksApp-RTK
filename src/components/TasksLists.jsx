@@ -5,6 +5,7 @@ import {
   useCreateTaskMutation,
   useUpdateTasksMutation,
 } from "../api/apiSlice";
+import { TasksItems } from "./TasksItems";
 
 export const TasksLists = () => {
   const { data: tasks, isError, isLoading, error } = useGetTasksQuery();
@@ -19,32 +20,10 @@ export const TasksLists = () => {
   }
   console.log(tasks);
   return (
-    <div className="bg-red-200">
-      <ul className="container-tasks">
+    <div className="basis-1/2 h-4/5">
+      <ul className="p-1 max-h-96 overflow-auto scrollbar">
         {tasks.map((tasks) => (
-          <li className="task-item" key={tasks.name}>
-            <h3>{tasks.name}</h3>
-            <p>{tasks.descriptionl}</p>
-            <button
-              onClick={() => {
-                deleteTask(tasks.id);
-              }}
-            >
-              Delete
-            </button>
-            <input
-              type="checkbox"
-              checked={tasks.completed}
-              id={tasks.id}
-              onChange={(e) => {
-                updateTask({
-                  ...tasks,
-                  completed: e.target.checked,
-                });
-              }}
-            />
-            <label htmlFor={tasks.id}>completed</label>
-          </li>
+          <TasksItems tasks={tasks} />
         ))}
       </ul>
     </div>

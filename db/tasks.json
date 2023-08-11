@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Tasks 3",
       "description": "tasks description 3",
-      "completed": true
+      "completed": false
     },
     {
       "id": 4,
@@ -29,6 +29,12 @@
       "description": "jj",
       "completed": "on",
       "id": 5
+    },
+    {
+      "name": "Prueba",
+      "description": "app",
+      "completed": "on",
+      "id": 6
     }
   ]
 }
