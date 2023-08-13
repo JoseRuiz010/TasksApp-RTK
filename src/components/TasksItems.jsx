@@ -8,7 +8,7 @@ export const TasksItems = ({ tasks }) => {
   const [deleteTask] = useDeleteTasksMutation();
   const [updateTask] = useUpdateTasksMutation();
 
-  const onDeleteTask = () => deleteTask();
+  const onDeleteTask = (id) => deleteTask(id);
   const oUpdateTask = (data) => updateTask(data);
 
   return (
